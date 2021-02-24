@@ -1,25 +1,22 @@
-import React from 'react'
-import Todo from './Todo'
+import React from 'react';
+import Todo from "./Todo";
 
-function Todolist({todos,setTodos,filteredTodo}) {
+const TodoList = ({todos, setTodos, filterdTodo}) => {
     return (
-        <div className= "todo-container">
+        <div className="todo-container">
             <ul className="todo-list">
-            {
-                todos.map(item  =><Todo 
+                {
+                    filterdTodo.map(item => <Todo 
                         key={item.id}
                         text={item.text}
+                        completed ={item.completed}
                         item={item}
                         todos={todos}
                         setTodos={setTodos}
-                        completed={item.completed}
                     />)
-            }
-
-
+}
             </ul>
         </div>
     )
 }
-
-export default Todolist
+export default TodoList
